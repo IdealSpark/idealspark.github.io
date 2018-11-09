@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>云天的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="云天的博客">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="云天的博客">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="云天的博客">
+  
+    <link rel="alternate" href="/atom.xml" title="云天的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">云天的博客</a>
+      </h1>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-hexo的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/09/hexo的使用/" class="article-date">
+  <time datetime="2018-11-09T01:59:24.000Z" itemprop="datePublished">2018-11-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工具/">工具</a>►<a class="article-category-link" href="/categories/工具/hexo/">hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/09/hexo的使用/">hexo的使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h3 id="基本用法-hexo官网"><a href="#基本用法-hexo官网" class="headerlink" title="基本用法 hexo官网"></a>基本用法 <a href="https://hexo.io" target="_blank" rel="noopener">hexo官网</a></h3><ul>
+<li>hexo n “新文章”  创建文章</li>
+<li>hexo g 生成静态文件</li>
+<li>hexo s 启动server 本地预览</li>
+<li>hexo d 部署到github</li>
+<li>hexo clean 清除生成的静态文件</li>
+</ul>
+<h3 id="在hexo中插入图片"><a href="#在hexo中插入图片" class="headerlink" title="在hexo中插入图片"></a>在hexo中插入图片</h3><blockquote>
+<p><a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="noopener">https://github.com/CodeFalling/hexo-asset-image</a></p>
+</blockquote>
+<h3 id="关于多台电脑"><a href="#关于多台电脑" class="headerlink" title="关于多台电脑"></a>关于多台电脑</h3><p>hexo部署到github上的只有生成的静态文件,不包括hexo本身的环境以及md格式的post文件,如果你要在<br>两台电脑上同时写blog,或者更换了电脑,那情况就有点复杂,下面我们说一下解决方案 <a href="www.zhihu.com/question/21193762/answer/79109280">参考链接</a></p>
+<h4 id="hexo-的搭建流程"><a href="#hexo-的搭建流程" class="headerlink" title="hexo 的搭建流程"></a>hexo 的搭建流程</h4><ol>
+<li>创建仓库，<a href="http://idealspark.github.io" target="_blank" rel="noopener">http://idealspark.github.io</a></li>
+<li>使用git clone <a href="https://github.com/idealspark/idealspark.github.io.git拷贝仓库" target="_blank" rel="noopener">https://github.com/idealspark/idealspark.github.io.git拷贝仓库</a></li>
+<li>在master之外创建hexo分支,然后切换到hexo分支</li>
+<li>在hexo分支下安装,初始化hexo环境:<br>通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git</li>
+<li>修改_config.yml中的deploy参数，分支应为master</li>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo提交安装的环境到github上</li>
+<li>执行hexo g -d,生成静态文件会部署到GitHub的master分支上</li>
+<li>最终在GitHub上的<a href="http://idealspark.github.io仓库就有两个分支，" target="_blank" rel="noopener">http://idealspark.github.io仓库就有两个分支，</a><br>一个hexo分支用来存放搭建的环境和post文件，一个master分支用来存放生成的静态网页</li>
+</ol>
+<h4 id="日常更新博客流程"><a href="#日常更新博客流程" class="headerlink" title="日常更新博客流程"></a>日常更新博客流程</h4><ol>
+<li>首先更新博客是在hexo分支上</li>
+<li>正常执行hexo n g 等hexo生成blog的指令</li>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动<br>推送到GitHub的hexo分支上；</li>
+<li>最后执行hexo g -d发布网站到github上,虽然现在是在hexo分支上,但hexo g -d 会把生成的静态文件推送到master分支上</li>
+</ol>
+<h4 id="多台电脑上更新博客流程"><a href="#多台电脑上更新博客流程" class="headerlink" title="多台电脑上更新博客流程"></a>多台电脑上更新博客流程</h4><ol>
+<li>使用git clone <a href="https://github.com/idealspark/idealspark.github.io.git拷贝仓库；" target="_blank" rel="noopener">https://github.com/idealspark/idealspark.github.io.git拷贝仓库；</a></li>
+<li>切换到hexo分支</li>
+<li>通过Git bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git<br><strong>不需要hexo init这条指令</strong></li>
+</ol>
+<h4 id="更新hexo配置流程-如更改theme"><a href="#更新hexo配置流程-如更改theme" class="headerlink" title="更新hexo配置流程,如更改theme"></a>更新hexo配置流程,如更改theme</h4><ol>
+<li>首先切换到hexo分支上</li>
+<li>更改hexo配置</li>
+<li>执行git add .、git commit -m “…”、git push origin hexo 推送到GitHub hexo分支上</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/09/hexo的使用/" data-id="cjo9h5hb400009sv35dwlnt2t" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+     
+        <h3 class="follow-title ">Follow me</h3>
+     
+    <div class="widget follow">
+      
+              <a class="github" aria-hidden="true" href="https://github.com/idealspark" target="_blank" title="Github"></a>
+      
+      
+      
+      
+            <a class="email" aria-hidden="true"  href="mailto:idealspark@foxmail.com" target="_blank" title="邮箱"></a>
+      
+    </div>
+  </div>
+
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title categories">分类</h3>
+    <div class="widget" id="categories">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/hexo/">hexo</a><span class="category-list-count">1</span></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title tagcloud">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/工具/" style="font-size: 14px;">工具</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title recent-posts">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/11/09/hexo的使用/">hexo的使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title archive">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+<div class="widget-wrap">
+    <h3 class="widget-title">Links</h3>
+    <div class="widget">
+        <ul>
+            
+            <li>
+                <a href="https://github.com">github</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2018 idealspark&nbsp;|&nbsp;
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;ideaospark@foxmial.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+  
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "e2fb4051c49842688ce669e634bc983f",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+    
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+</body>
+</html>
