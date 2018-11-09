@@ -66,6 +66,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-二进制文件与文本文件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/09/二进制文件与文本文件/" class="article-date">
+  <time datetime="2018-11-09T06:38:37.000Z" itemprop="datePublished">2018-11-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/基础知识/">基础知识</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/09/二进制文件与文本文件/">二进制文件与文本文件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>我们知道,图片,视频,压缩文件等的存储格式是二进制,而.txt,.josn,.xml等文件的存储格式是<br>文本文件,也知道任何文件底层存储的都是0101二进制,那文本文件和二进制到底有什么区别呢</p>
+<ul>
+<li>文本文件:只能存储字符编码对应的二进制,比如汉字”制”,对应的UTF-8编码的二进制为:111001011000100010110110<br>文件也是按照字符集编码解析的</li>
+<li>二进制文件: 他们可以存储任意的0101二进制,只有特定的软件才知道他们的解析规则,一般二进制文件中<br>开头的字符包含魔数,文件头等信息</li>
+</ul>
+<p>http协议本身使用的是文本文件(当然它是可以用来传输二进制文件的,图片,文件等),<br>主要原因是http协议认为,数据传送的时间远远小于连接建立( connection establishment)的时间</p>
+<p>在设计数据传输的时候需要考虑  数据传输的时间 和 连接建立的时间 的比例</p>
+<p>参考阅读: <a href="https://fileinfo.com/help/binary_vs_text_files" target="_blank" rel="noopener">binary_vs_text_files</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/09/二进制文件与文本文件/" data-id="cjo9pokw30000j0v3axtka1ey" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础知识/">基础知识</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
     <article id="post-hexo的使用" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/11/09/hexo的使用/" class="article-date">
@@ -135,7 +189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/09/hexo的使用/" data-id="cjo9h5hb400009sv35dwlnt2t" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/11/09/hexo的使用/" data-id="cjo9pokwv0002j0v3bii0mdtf" class="article-share-link">分享</a>
       
       
       
@@ -179,7 +233,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title categories">分类</h3>
     <div class="widget" id="categories">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/hexo/">hexo</a><span class="category-list-count">1</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/hexo/">hexo</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/基础知识/">基础知识</a><span class="category-list-count">1</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -189,7 +243,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title tagcloud">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/工具/" style="font-size: 14px;">工具</a>
+      <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/基础知识/" style="font-size: 14px;">基础知识</a> <a href="/tags/工具/" style="font-size: 14px;">工具</a>
     </div>
   </div>
 
@@ -199,6 +253,10 @@
     <h3 class="widget-title recent-posts">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/11/09/二进制文件与文本文件/">二进制文件与文本文件</a>
+          </li>
         
           <li>
             <a href="/2018/11/09/hexo的使用/">hexo的使用</a>
@@ -213,7 +271,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title archive">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
