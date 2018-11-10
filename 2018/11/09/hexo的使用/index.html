@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="云天的博客">
 <meta property="og:description" content="基本用法 hexo官网 hexo n “新文章”  创建文章 hexo g 生成静态文件 hexo s 启动server 本地预览 hexo d 部署到github hexo clean 清除生成的静态文件  在hexo中插入图片 https://github.com/CodeFalling/hexo-asset-image  关于多台电脑hexo部署到github上的只有生成的静态文件,不包括h">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-09T03:27:02.815Z">
+<meta property="og:updated_time" content="2018-11-10T09:26:34.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo的使用">
 <meta name="twitter:description" content="基本用法 hexo官网 hexo n “新文章”  创建文章 hexo g 生成静态文件 hexo s 启动server 本地预览 hexo d 部署到github hexo clean 清除生成的静态文件  在hexo中插入图片 https://github.com/CodeFalling/hexo-asset-image  关于多台电脑hexo部署到github上的只有生成的静态文件,不包括h">
@@ -65,6 +65,10 @@
         <a href="/" id="logo">云天的博客</a>
       </h1>
       
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Follow excellent,And success will chase you</a>
+        </h2>
+      
     </div>
   </div>
 </header>
@@ -97,7 +101,8 @@
       
         <!-- Table of Contents -->
         
-        <h3 id="基本用法-hexo官网"><a href="#基本用法-hexo官网" class="headerlink" title="基本用法 hexo官网"></a>基本用法 <a href="https://hexo.io" target="_blank" rel="noopener">hexo官网</a></h3><ul>
+        <h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><ul>
+<li><a href="https://hexo.io" target="_blank" rel="noopener">hexo官网</a></li>
 <li>hexo n “新文章”  创建文章</li>
 <li>hexo g 生成静态文件</li>
 <li>hexo s 启动server 本地预览</li>
@@ -107,12 +112,13 @@
 <h3 id="在hexo中插入图片"><a href="#在hexo中插入图片" class="headerlink" title="在hexo中插入图片"></a>在hexo中插入图片</h3><blockquote>
 <p><a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="noopener">https://github.com/CodeFalling/hexo-asset-image</a></p>
 </blockquote>
-<h3 id="关于多台电脑"><a href="#关于多台电脑" class="headerlink" title="关于多台电脑"></a>关于多台电脑</h3><p>hexo部署到github上的只有生成的静态文件,不包括hexo本身的环境以及md格式的post文件,如果你要在<br>两台电脑上同时写blog,或者更换了电脑,那情况就有点复杂,下面我们说一下解决方案 <a href="www.zhihu.com/question/21193762/answer/79109280">参考链接</a></p>
+<h3 id="关于多台电脑"><a href="#关于多台电脑" class="headerlink" title="关于多台电脑"></a>关于多台电脑</h3><p>hexo部署到github上的只有生成的静态文件,不包括hexo本身的环境以及md格式的post文件,如果你要在两台电脑上<br>同时写blog,或者更换了电脑,那情况就有点复杂,下面我们说一下解决方案 <a href="www.zhihu.com/question/21193762/answer/79109280">参考链接</a></p>
+<a id="more"></a>
 <h4 id="hexo-的搭建流程"><a href="#hexo-的搭建流程" class="headerlink" title="hexo 的搭建流程"></a>hexo 的搭建流程</h4><ol>
 <li>创建仓库，<a href="http://idealspark.github.io" target="_blank" rel="noopener">http://idealspark.github.io</a></li>
 <li>使用git clone <a href="https://github.com/idealspark/idealspark.github.io.git拷贝仓库" target="_blank" rel="noopener">https://github.com/idealspark/idealspark.github.io.git拷贝仓库</a></li>
 <li>在master之外创建hexo分支,然后切换到hexo分支</li>
-<li>在hexo分支下安装,初始化hexo环境:<br>通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git</li>
+<li>在hexo分支下安装,初始化hexo环境:通过Git bash依次执行npm install hexo、hexo init、npm install 和<br>npm install hexo-deployer-git</li>
 <li>修改_config.yml中的deploy参数，分支应为master</li>
 <li>依次执行git add .、git commit -m “…”、git push origin hexo提交安装的环境到github上</li>
 <li>执行hexo g -d,生成静态文件会部署到GitHub的master分支上</li>
@@ -121,24 +127,25 @@
 <h4 id="日常更新博客流程"><a href="#日常更新博客流程" class="headerlink" title="日常更新博客流程"></a>日常更新博客流程</h4><ol>
 <li>首先更新博客是在hexo分支上</li>
 <li>正常执行hexo n g 等hexo生成blog的指令</li>
-<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动<br>推送到GitHub的hexo分支上；</li>
+<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub的hexo分支上；</li>
 <li>最后执行hexo g -d发布网站到github上,虽然现在是在hexo分支上,但hexo g -d 会把生成的静态文件推送到master分支上</li>
 </ol>
 <h4 id="多台电脑上更新博客流程"><a href="#多台电脑上更新博客流程" class="headerlink" title="多台电脑上更新博客流程"></a>多台电脑上更新博客流程</h4><ol>
 <li>使用git clone <a href="https://github.com/idealspark/idealspark.github.io.git拷贝仓库；" target="_blank" rel="noopener">https://github.com/idealspark/idealspark.github.io.git拷贝仓库；</a></li>
 <li>切换到hexo分支</li>
-<li>通过Git bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git<br><strong>不需要hexo init这条指令</strong></li>
+<li>通过Git bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git,<strong>不需要hexo init这条指令</strong></li>
 </ol>
-<h4 id="更新hexo配置流程-如更改theme"><a href="#更新hexo配置流程-如更改theme" class="headerlink" title="更新hexo配置流程,如更改theme"></a>更新hexo配置流程,如更改theme</h4><ol>
+<h4 id="更新hexo配置流程"><a href="#更新hexo配置流程" class="headerlink" title="更新hexo配置流程"></a>更新hexo配置流程</h4><ol>
 <li>首先切换到hexo分支上</li>
-<li>更改hexo配置</li>
+<li>更改hexo配置,如更改theme</li>
 <li>执行git add .、git commit -m “…”、git push origin hexo 推送到GitHub hexo分支上</li>
 </ol>
+<p><a href="https://github.com/idealspark/idealspark.github.io/issues/6" target="_blank" rel="noopener">查看评论或留言</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/09/hexo的使用/" data-id="cjo9pokwv0002j0v3bii0mdtf" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/11/09/hexo的使用/" data-id="cjob7cg1p000688v3gbnv1mtr" class="article-share-link">分享</a>
       
       
       
@@ -212,8 +219,6 @@
     
      
        
-      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-    
        
       
       
@@ -235,7 +240,7 @@
       
         <strong class="toc-title">文章目录</strong>
         <div class="toc-widget-list">
-              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本用法-hexo官网"><span class="toc-number">1.</span> <span class="toc-text">基本用法 hexo官网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在hexo中插入图片"><span class="toc-number">2.</span> <span class="toc-text">在hexo中插入图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于多台电脑"><span class="toc-number">3.</span> <span class="toc-text">关于多台电脑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#hexo-的搭建流程"><span class="toc-number">3.1.</span> <span class="toc-text">hexo 的搭建流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#日常更新博客流程"><span class="toc-number">3.2.</span> <span class="toc-text">日常更新博客流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多台电脑上更新博客流程"><span class="toc-number">3.3.</span> <span class="toc-text">多台电脑上更新博客流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更新hexo配置流程-如更改theme"><span class="toc-number">3.4.</span> <span class="toc-text">更新hexo配置流程,如更改theme</span></a></li></ol></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本用法"><span class="toc-number">1.</span> <span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#在hexo中插入图片"><span class="toc-number">2.</span> <span class="toc-text">在hexo中插入图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于多台电脑"><span class="toc-number">3.</span> <span class="toc-text">关于多台电脑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#hexo-的搭建流程"><span class="toc-number">3.1.</span> <span class="toc-text">hexo 的搭建流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#日常更新博客流程"><span class="toc-number">3.2.</span> <span class="toc-text">日常更新博客流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多台电脑上更新博客流程"><span class="toc-number">3.3.</span> <span class="toc-text">多台电脑上更新博客流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更新hexo配置流程"><span class="toc-number">3.4.</span> <span class="toc-text">更新hexo配置流程</span></a></li></ol></li></ol>
           </div>
       </div>
     </div>
@@ -297,16 +302,6 @@ window.onload = function() {
       
 
   
-    <script>
-      var cloudTieConfig = {
-        url: document.location.href, 
-        sourceId: "",
-        productKey: "e2fb4051c49842688ce669e634bc983f",
-        target: "cloud-tie-wrapper"
-      };
-    </script>
-    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
-    
 
   
 

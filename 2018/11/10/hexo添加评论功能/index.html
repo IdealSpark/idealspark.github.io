@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hexo添加评论功能 | 云天的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="目前网上有很多给hexo添加评论的插件,比如disqus,畅言,友言,gitment等,但发现他们都不适合我,我想要一个足够简单,最好评论放在github上,这样我只需要维护一个Github就可以了,gitment是挺符合我的需求,但不知道为什么现在用不了,于是我就自己动手做了一个源码 设计思路主要用了一下Github的issue功能,每使用hexo n新建一篇文章就到GitHub的仓库下创建">
+<meta name="keywords" content="hexo,工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo添加评论功能">
+<meta property="og:url" content="http://yoursite.com/2018/11/10/hexo添加评论功能/index.html">
+<meta property="og:site_name" content="云天的博客">
+<meta property="og:description" content="目前网上有很多给hexo添加评论的插件,比如disqus,畅言,友言,gitment等,但发现他们都不适合我,我想要一个足够简单,最好评论放在github上,这样我只需要维护一个Github就可以了,gitment是挺符合我的需求,但不知道为什么现在用不了,于是我就自己动手做了一个源码 设计思路主要用了一下Github的issue功能,每使用hexo n新建一篇文章就到GitHub的仓库下创建">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-10T09:31:55.524Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo添加评论功能">
+<meta name="twitter:description" content="目前网上有很多给hexo添加评论的插件,比如disqus,畅言,友言,gitment等,但发现他们都不适合我,我想要一个足够简单,最好评论放在github上,这样我只需要维护一个Github就可以了,gitment是挺符合我的需求,但不知道为什么现在用不了,于是我就自己动手做了一个源码 设计思路主要用了一下Github的issue功能,每使用hexo n新建一篇文章就到GitHub的仓库下创建">
+  
+    <link rel="alternate" href="/atom.xml" title="云天的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">云天的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Follow excellent,And success will chase you</a>
+        </h2>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hexo添加评论功能" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/10/hexo添加评论功能/" class="article-date">
+  <time datetime="2018-11-10T06:48:09.000Z" itemprop="datePublished">2018-11-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工具/">工具</a>►<a class="article-category-link" href="/categories/工具/hexo/">hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo添加评论功能
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>  目前网上有很多给hexo添加评论的插件,比如disqus,畅言,友言,gitment等,但发现他们都不适合我,我想要一个<br>足够简单,最好评论放在github上,这样我只需要维护一个Github就可以了,<a href="https://imsun.net/posts/gitment-introduction/" target="_blank" rel="noopener">gitment</a>是挺符合我的需求,但不知道<br>为什么现在用不了,于是我就自己动手做了一个<a href="https://gist.github.com/idealspark/fbbce66d4a8cb1d3cc4beeea46aba103" target="_blank" rel="noopener">源码</a></p>
+<h3 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h3><p>主要用了一下Github的issue功能,每使用hexo n新建一篇文章就到GitHub的仓库下创建一个issue,然后在文章的<br>末尾添加一个评论的链接,定位到issue,具体效果请点击<a href="https://github.com/idealspark/idealspark.github.io/issues/8" target="_blank" rel="noopener">查看评论或留言</a>,评论需要注册github账号,<br>只会在使用hexo n 命令时创建issue</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ol>
+<li>在blog的根目录下创建script目录,拷贝<a href="">源码</a>,放到script目录下</li>
+<li><a href="https://github.com/settings/tokens" target="_blank" rel="noopener">创建GitHub访问token</a>,scope选择public_repo即可</li>
+<li><p>在blog根目录下的_config.yml 添加如下配置</p>
+ <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">comment:</span></span><br><span class="line"><span class="attr">  username:</span> <span class="string">github用户名</span> <span class="comment">#github用户名</span></span><br><span class="line"><span class="attr">  repository:</span> <span class="string">仓库名</span> <span class="comment">#blog仓库地址</span></span><br><span class="line"><span class="attr">  token:</span> <span class="string">你的token</span> <span class="comment">#github生成的token</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>每次使用hexo n 创建文章时会自动创建评论链接,如果不想创建issue,手动到soure/_post创建文章的md文件</p>
+</li>
+<li>文章标题修改后,需要手动修改issue的描述</li>
+<li>请不要滥用github,定期删除文章不存在,也没有评论的issue</li>
+</ol>
+<a id="more"></a>
+<h3 id="一点感悟"><a href="#一点感悟" class="headerlink" title="一点感悟"></a>一点感悟</h3><ol>
+<li>在文章后面追加评论链接时,一开始我希望hexo给我提供操作文章模板的API,找了半天也没找到,既然能直接拿到<br>生成的文件,为什么不直接用fs去操作文件呢</li>
+<li>为了把GitHub的token做成可配置的,我以为hexo会提供读取_config.yml配置变量的API,搜索了一圈也没找到,为什么<br>不直接去读取解析_config.yml的配置文件呢</li>
+<li>不要对api有过度依赖,可以思考能直接拿到那些些资源,自己动手</li>
+</ol>
+<p>相关阅读<br><a href="http://localhost:4000/2018/11/09/hexo%E7%9A%84%E4%BD%BF%E7%94%A8/" target="_blank" rel="noopener">hexo的使用</a></p>
+<p>　<br><a href="https://github.com/idealspark/idealspark.github.io/issues/8" target="_blank" rel="noopener">查看评论或留言</a></p>
+<h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line">yaml = <span class="built_in">require</span>(<span class="string">'js-yaml'</span>);</span><br><span class="line"><span class="keyword">var</span> GitHub = <span class="built_in">require</span>(<span class="string">'github-api'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> doc = yaml.safeLoad(fs.readFileSync(<span class="string">'_config.yml'</span>, <span class="string">'utf8'</span>));</span><br><span class="line"><span class="keyword">var</span> repository = doc.comment.repository;</span><br><span class="line"><span class="keyword">var</span> token = doc.comment.token;</span><br><span class="line"><span class="keyword">var</span> username = doc.comment.username;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> github = <span class="keyword">new</span> GitHub(&#123;</span><br><span class="line">  username: username,</span><br><span class="line">  token: token</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  hexo.on(<span class="string">'new'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">post</span>) </span>&#123;<span class="comment">//当generate完成后执行备份</span></span><br><span class="line">    <span class="keyword">var</span> path = post.path</span><br><span class="line">    <span class="keyword">let</span> name = path.substring(<span class="number">1</span> + path.lastIndexOf(<span class="string">"\\"</span>),</span><br><span class="line">        path.lastIndexOf(<span class="string">"."</span>));</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"生成了新的post ："</span> + name);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> blogIssure = github.getIssues(username, repository);</span><br><span class="line">    blogIssure.createIssue(&#123;</span><br><span class="line">      <span class="string">"title"</span>: name,</span><br><span class="line">      <span class="string">"body"</span>: <span class="string">"欢迎留言,如果不能留言,请先注册GitHub账号"</span></span><br><span class="line">    &#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params">&#123;data&#125;</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> commentUrl = data.html_url</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"评论链接: "</span> + data.html_url)</span><br><span class="line">      <span class="keyword">var</span> comementLink = <span class="string">"\r\n　\r\n[查看评论或留言]("</span> + commentUrl + <span class="string">")"</span></span><br><span class="line">      fs.appendFile(path, comementLink, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">'创建评论连接出错: '</span> + err);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'成功的创建了评论连接'</span>);</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">  &#125;);</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"生成评论连接出错,错误详情为："</span> + e.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/10/hexo添加评论功能/" data-id="cjob7cg1j000288v3zk0bhq24" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+ <script src="/jquery/jquery.min.js"></script>
+  <div id="random_posts">
+    <h2>推荐文章</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
+
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/10/图册-日常/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          图册-日常
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/09/二进制文件与文本文件/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">二进制文件与文本文件</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+       
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#设计思路"><span class="toc-number">1.</span> <span class="toc-text">设计思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一点感悟"><span class="toc-number">3.</span> <span class="toc-text">一点感悟</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#源码"><span class="toc-number">4.</span> <span class="toc-text">源码</span></a></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2018 idealspark&nbsp;|&nbsp;
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;ideaospark@foxmial.com
+    </div>
+  </div>
+</footer>
+ <script src="/jquery/jquery.min.js"></script>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+  
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ <script src="/js/is.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/elevator.js"></script>
+  </div>
+</body>
+</html>
