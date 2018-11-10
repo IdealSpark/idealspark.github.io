@@ -4,7 +4,7 @@
 
 # Site
 title: 云天的博客
-subtitle:
+subtitle: Follow excellent,And success will chase you
 description:
 keywords:
 author: idealspark
@@ -81,3 +81,8 @@ deploy:
   type: git
   repository: https://github.com/idealspark/idealspark.github.io.git
   branch: master
+
+comment:
+  username: idealspark  #github用户名
+  repository: idealspark.github.io #blog仓库地址
+  token: token #github生成的token
